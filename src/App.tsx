@@ -2,6 +2,7 @@ import Sidenav from "./components/Sidenav";
 import { HiDatabase } from "react-icons/hi";
 import { CgLoadbarSound } from "react-icons/cg";
 import { BsFillGearFill } from "react-icons/bs";
+import WorkflowsPage from "./pages/Workflows";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Sidenav.Action icon={<BsFillGearFill className="w-3 h-3" />} path="/settings" label="Settings" />
         </Sidenav.ActionsContainer>
       </Sidenav>
+      <WorkflowsPage />
     </div>
   )
 }
