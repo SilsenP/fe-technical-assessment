@@ -25,7 +25,14 @@ const WorkflowColumnActions = ({ key }: { key: string }) => (
   </div>
 )
 
-const WorkflowTags = ({ tags }: { tags: { color: string, name: string }[] }) => {
+interface WorkflowTagsProps {
+  tags: {
+    color: string,
+    name: string
+  }[]
+}
+
+const WorkflowTags = ({ tags }: WorkflowTagsProps) => {
   if (!tags.length) {
     return (
       <Button
@@ -37,9 +44,20 @@ const WorkflowTags = ({ tags }: { tags: { color: string, name: string }[] }) => 
     )
   }
 
+  if (tags.length === 1) {
+    return (
+      <Chip>
+        <span className={`w-2 h-2 rounded-sm`} style={{ background: tags[0].color }} />
+        {tags[0].name}
+      </Chip>
+    )
+  }
+
   return (
     <Chip>
-      Test
+      <span className={`w-2 h-2 rounded-sm`} style={{ background: tags[0].color }} />
+      <span className={`w-2 h-2 rounded-sm`} style={{ background: tags[1].color }} />
+      {tags.length} tags
     </Chip>
   )
 }
