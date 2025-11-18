@@ -20,8 +20,12 @@ interface SidenavProfileProps {
 }
 
 Sidenav.Profile = ({ name }: SidenavProfileProps) => {
+  const handleOpenProfile = () => {
+    alert("Redirect to profile");
+  }
+
   return (
-    <div className="flex gap-2 justify-start items-center px-2">
+    <div className="flex gap-2 justify-start items-center px-2 cursor-pointer" onClick={handleOpenProfile}>
       <span className="w-9 h-9 bg-violet-300 rounded-md" />
       <span className="text-sm font-semibold leading-[20px]">{name}</span>
     </div>
@@ -31,8 +35,8 @@ Sidenav.Profile = ({ name }: SidenavProfileProps) => {
 Sidenav.CreateButton = () => {
   return (
     <Button
-      endIcon={<LiaPlusSolid className="w-3 h-3" />}
-      className="w-full h-8 border-neutral-200 text-sm font-semibold shadow-xs rounded-md"
+      endIcon={<LiaPlusSolid className="w-3 h-3 stroke-2" />}
+      className="w-full h-8 border-neutral-200 text-sm font-semibold shadow-xs rounded-md hover:bg-neutral-200 hover:border-neutral-400"
     >
       New
     </Button>

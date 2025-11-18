@@ -13,7 +13,7 @@ const Button = ({ children, className, endIcon, onClick, startIcon }: ButtonProp
   return (
     <button
       onClick={onClick}
-      className={`flex gap-[6px] items-center justify-center px-2 py-4 box-border border ${className}`}
+      className={`flex gap-[6px] items-center justify-center box-border border ${className}`}
     >
       {startIcon}
       {children}
