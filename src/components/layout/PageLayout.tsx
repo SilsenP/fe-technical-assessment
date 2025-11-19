@@ -9,9 +9,9 @@ interface PageLayoutProps {
 
 const PageLayout = ({ title, actions, children }: PageLayoutProps) => {
   return (
-    <div className="h-dvh w-full flex flex-col">
+    <div className="h-dvh w-full flex flex-col overflow-hidden">
       <Header title={title} actions={actions} />
-      <main className="w-full h-auto flex-grow px-5">
+      <main className="w-full h-auto flex-grow px-5 overflow-auto">
         {children}
       </main>
     </div>

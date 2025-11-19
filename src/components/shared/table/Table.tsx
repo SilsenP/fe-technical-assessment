@@ -25,7 +25,7 @@ const Table = ({ columns, data }: TableProps) => {
 
   return (
     <table className="w-full h-auto relative">
-      <thead className="sticky top-0">
+      <thead className="sticky top-0 bg-white">
         <tr className="border-b border-neutral-200">
           {
             columns.map(({ title, key }: Column) => (

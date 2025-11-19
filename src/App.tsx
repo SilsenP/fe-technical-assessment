@@ -6,7 +6,7 @@ import WorkflowsPage from "./pages/Workflows";
 
 function App() {
   return (
-    <div className="w-full h-dvh flex">
+    <div className="w-full h-dvh flex overflow-hidden">
       <Sidenav>
         <Sidenav.Profile name="AirOps" />
         <Sidenav.CreateButton />
