@@ -5,6 +5,8 @@ import { LuTrash } from "react-icons/lu";
 import { Column } from "../../components/Table";
 import { LiaPlusSolid } from "react-icons/lia";
 import Chip from "../../components/Chip";
+import { Tag } from "../../types/tag";
+import TimeAgo from "react-timeago";
 
 const WorkflowColumnLightText = ({ value }: { value: ReactNode }) => (
   <span className="text-sm text-neutral-500">{value}</span>
@@ -26,10 +28,7 @@ const WorkflowColumnActions = ({ key }: { key: string }) => (
 )
 
 interface WorkflowTagsProps {
-  tags: {
-    color: string,
-    name: string
-  }[]
+  tags: Tag[]
 }
 
 const WorkflowTags = ({ tags }: WorkflowTagsProps) => {
@@ -63,25 +62,25 @@ const WorkflowTags = ({ tags }: WorkflowTagsProps) => {
 }
 
 export const WORKFLOW_COLUMNS: Column[] = [
-    {
-      title: "Type",
-      key: "type",
-      renderCell: (row, key) => <WorkflowColumnLightText value={row?.[key] || ""} />
-    },
-    { title: "Name", key: "name" },
-    {
-      title: "Tags",
-      key: "tags",
-      renderCell: (row, key) => <WorkflowTags tags={row?.[key]} />
-    },
-    {
-      title: "Last Updated",
-      key: "lastUpdated",
-      renderCell: (row, key) => <WorkflowColumnLightText value={row?.[key] || ""} />
-    },
-    {
-      title: "Actions",
-      key: "actions",
-      renderCell: (_row, key) => <WorkflowColumnActions key={key} />
-    },
-  ];
+  {
+    title: "Type",
+    key: "type",
+    renderCell: (row, key) => <WorkflowColumnLightText value={row?.[key] || ""} />
+  },
+  { title: "Name", key: "name" },
+  {
+    title: "Tags",
+    key: "tags",
+    renderCell: (row, key) => <WorkflowTags tags={row?.[key]} />
+  },
+  {
+    title: "Last Updated",
+    key: "lastUpdated",
+    renderCell: (row, key) => <WorkflowColumnLightText value={<TimeAgo date={new Date(row?.[key] * 1000)} />} />
+  },
+  {
+    title: "Actions",
+    key: "actions",
+    renderCell: (_row, key) => <WorkflowColumnActions key={key} />
+  },
+];
