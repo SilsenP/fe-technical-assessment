@@ -66,7 +66,7 @@ Sidenav.Action = ({ icon, label, path }: SidenavActionProps) => {
   }
 
   return (
-    <div className="flex gap-2 items-center cursor-pointer h-8">
+    <div className="flex gap-2 items-center cursor-pointer h-8 hover:opacity-70 active:opacity-30">
       <span className="flex-shrink-0 w-3 h-3 fill-gray-500 text-gray-500">
         {icon}
       </span>
