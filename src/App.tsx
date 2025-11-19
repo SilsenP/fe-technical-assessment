@@ -1,4 +1,4 @@
-import Sidenav from "./components/Sidenav";
+import Sidenav from "./components/navigation/Sidenav";
 import { HiDatabase } from "react-icons/hi";
 import { CgLoadbarSound } from "react-icons/cg";
 import { BsFillGearFill } from "react-icons/bs";

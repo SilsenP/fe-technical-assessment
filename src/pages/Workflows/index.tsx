@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import Dropdown from "../../components/Dropdown";
-import PageLayout from "../../components/PageLayout";
-import SearchInput from "../../components/SearchInput";
-import Table from "../../components/Table";
+import Dropdown from "../../components/shared/Dropdown";
+import PageLayout from "../../components/layout/PageLayout";
+import SearchInput from "../../components/shared/SearchInput";
+import Table from "../../components/shared/table/Table";
 import useAirOps from "../../hooks/useAirOps";
 import { WORKFLOW_COLUMNS } from "./columns";
 import { Workflow } from "../../types/workflow";

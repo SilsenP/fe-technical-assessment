@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import Button from "./Button";
+import Button from "../shared/Button";
 import { LiaPlusSolid } from "react-icons/lia";
 
 interface SidenavProps {
@@ -7,7 +7,6 @@ interface SidenavProps {
 }
 
 const Sidenav = ({ children }: SidenavProps) => {
-
   return (
     <nav className="h-dvh w-60 border-r border-neutral-200 p-2 flex flex-col gap-2">
       {children}
